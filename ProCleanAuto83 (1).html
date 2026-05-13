@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>ProCleanAuto83 - Nettoyage auto Saint Raphael</title>
+  <meta name="description" content="ProCleanAuto83, spécialiste du nettoyage auto à Saint-Raphaël et dans le Var Est. Detailing à domicile, lavage extérieur, shampouinage, rénovation optiques, soin des cuirs et traitement antibactérien. Devis gratuit.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #0891b2;
+      --dark: #111827;
+      --dark-soft: #1f2937;
+      --light: #f8fafc;
+      --cream: #f4f1ea;
+      --white: #ffffff;
+      --muted: #64748b;
+      --line: rgba(15, 23, 42, 0.1);
+      --shadow-sm: 0 0.75rem 2rem rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 1.25rem 3.5rem rgba(15, 23, 42, 0.14);
+      --shadow-lg: 0 2rem 5rem rgba(15, 23, 42, 0.2);
+      --radius: 1rem;
+      --radius-lg: 1.5rem;
+      --container: 75rem;
+      --header-height: 4.75rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 0.125rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 999rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand-mark,
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 13vw, 5.5rem);
+      max-width: 11ch;
+    }
+
+    h2 {
+      font-size: clamp(2.25rem, 8vw, 4rem);
+      color: var(--dark);
+      max-width: 13ch;
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .section {
+      padding: clamp(5rem, 10vw, 7.5rem) 0;
+      position: relative;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: clamp(2.2rem, 6vw, 4rem);
+    }
+
+    .section-header p {
+      max-width: 42rem;
+      font-size: clamp(1rem, 2vw, 1.12rem);
+    }
+
+    .btn {
+      min-height: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999rem;
+      border: 0.0625rem solid transparent;
+      font-weight: 800;
+      font-size: 0.94rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      flex: 0 0 auto;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 1rem 2.5rem rgba(37, 99, 235, 0.28);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-0.18rem);
+      box-shadow: 0 1.35rem 3rem rgba(37, 99, 235, 0.34);
+    }
+
+    .btn-secondary {
+      color: var(--dark);
+      background: var(--white);
+      border-color: rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      transform: translateY(-0.18rem);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-dark {
+      color: var(--white);
+      background: var(--dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-dark:hover,
+    .btn-dark:focus-visible {
+      transform: translateY(-0.18rem);
+      background: var(--primary);
+    }
+
+    .site-header {
+      position: sticky;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(1.1rem);
+      border-bottom: 0.0625rem solid rgba(15, 23, 42, 0.08);
+    }
+
+    .header-inner {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 102;
+    }
+
+    .brand-icon {
+      width: 2.65rem;
+      height: 2.65rem;
+      border-radius: 0.9rem;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.32), transparent 34%),
+        linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 0.8rem 1.8rem rgba(37, 99, 235, 0.25);
+    }
+
+    .brand-icon svg {
+      width: 1.55rem;
+      height: 1.55rem;
+    }
+
+    .brand-mark {
+      display: block;
+      font-size: 1.75rem;
+      color: var(--dark);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: -0.2rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-toggle {
+      width: 3rem;
+      height: 3rem;
+      border: 0;
+      border-radius: 999rem;
+      background: var(--dark);
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.32rem;
+      position: relative;
+      z-index: 102;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle span {
+      width: 1.2rem;
+      height: 0.125rem;
+      background: currentColor;
+      border-radius: 999rem;
+      transition: all 0.3s ease;
+    }
+
+    body.nav-open .nav-toggle span:nth-child(1) {
+      transform: translateY(0.44rem) rotate(45deg);
+    }
+
+    body.nav-open .nav-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    body.nav-open .nav-toggle span:nth-child(3) {
+      transform: translateY(-0.44rem) rotate(-45deg);
+    }
+
+    .main-nav {
+      position: fixed;
+      inset: 0;
+      min-height: 100vh;
+      padding: calc(var(--header-height) + 2rem) 6% 2rem;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 35%),
+        linear-gradient(145deg, rgba(17, 24, 39, 0.98), rgba(31, 41, 55, 0.98));
+      color: var(--white);
+      transform: translateX(100%);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    body.nav-open .main-nav {
+      transform: translateX(0);
+    }
+
+    .nav-links {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.12);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 10vw, 3.5rem);
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      border-top: 0.125rem solid currentColor;
+      border-right: 0.125rem solid currentColor;
+      transform: rotate(45deg);
+      opacity: 0.55;
+    }
+
+    .nav-links a:hover {
+      color: #bfdbfe;
+      padding-left: 0.4rem;
+    }
+
+    .nav-cta {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .nav-cta .phone {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+
+    .desktop-cta {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--header-height));
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-bg img {
+      height: 100%;
+      max-height: 60vh;
+      min-height: 100%;
+      filter: saturate(0.9) contrast(1.05);
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.92)),
+        linear-gradient(90deg, rgba(17, 24, 39, 0.94), rgba(17, 24, 39, 0.32));
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 55vw;
+      aspect-ratio: 1;
+      right: -20vw;
+      top: 10vh;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.22);
+      filter: blur(3rem);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(4rem, 9vh, 7rem) 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero .eyebrow {
+      color: #dbeafe;
+    }
+
+    .hero .eyebrow::before {
+      background: #dbeafe;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      max-width: 42rem;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1.05rem, 3vw, 1.28rem);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 0.35rem;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: clamp(1.4rem, 4vw, 2.4rem);
+      max-width: 44rem;
+    }
+
+    .proof-card {
+      padding: 1rem;
+      border: 0.0625rem solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(0.9rem);
+      border-radius: var(--radius);
+      box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.16);
+    }
+
+    .proof-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .proof-card span {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.84rem;
+    }
+
+    .floating-call {
+      position: fixed;
+      z-index: 90;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+      width: min(92%, 24rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 999rem;
+      font-weight: 900;
+      box-shadow: 0 1rem 2.5rem rgba(37, 99, 235, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .floating-call:hover {
+      transform: translateX(-50%) translateY(-0.2rem);
+    }
+
+    .services {
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%),
+        var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 0.0625rem solid rgba(15, 23, 42, 0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-0.35rem);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-media {
+      position: relative;
+      height: clamp(12rem, 44vw, 18rem);
+      overflow: hidden;
+    }
+
+    .service-media img {
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-media img {
+      transform: scale(1.04);
+    }
+
+    .service-media::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 45%;
+      background: linear-gradient(180deg, transparent, rgba(17, 24, 39, 0.72));
+    }
+
+    .service-icon {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 1;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.9rem;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.18);
+    }
+
+    .service-icon svg {
+      width: 1.45rem;
+      height: 1.45rem;
+    }
+
+    .service-body {
+      padding: 1.35rem;
+    }
+
+    .service-body h3 {
+      margin-bottom: 0.55rem;
+      color: var(--dark);
+    }
+
+    .service-body p {
+      font-size: 0.96rem;
+    }
+
+    .service-list {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .service-list li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: var(--dark-soft);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .service-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.12);
+    }
+
+    .realisations {
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .realisations-layout {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .before-after {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 22rem;
+      box-shadow: var(--shadow-md);
+      background: var(--dark);
+    }
+
+    .before-after img {
+      height: 100%;
+      min-height: 22rem;
+    }
+
+    .before-after::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(17, 24, 39, 0.84));
+    }
+
+    .ba-labels {
+      position: absolute;
+      inset: 1rem 1rem auto;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .ba-labels span {
+      color: var(--white);
+      background: rgba(17, 24, 39, 0.78);
+      backdrop-filter: blur(0.6rem);
+      border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+      border-radius: 999rem;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .ba-content {
+      position: absolute;
+      z-index: 1;
+      inset: auto 1rem 1rem;
+      color: var(--white);
+    }
+
+    .ba-content h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .ba-content p {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.95rem;
+    }
+
+    .result-card {
+      padding: 1.35rem;
+      background: var(--light);
+      border: 0.0625rem solid var(--line);
+      border-radius: var(--radius-lg);
+      display: grid;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .result-card svg {
+      width: 2.35rem;
+      height: 2.35rem;
+      color: var(--primary);
+    }
+
+    .result-card h3 {
+      color: var(--dark);
+    }
+
+    .result-card p {
+      font-size: 0.96rem;
+    }
+
+    .about {
+      background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(17, 24, 39, 0.96)),
+        url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&auto=format') center/cover;
+      color: var(--white);
+    }
+
+    .about h2 {
+      color: var(--white);
+      max-width: 12ch;
+    }
+
+    .about p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .about-layout {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .about-text .eyebrow {
+      color: #bfdbfe;
+    }
+
+    .about-text .eyebrow::before {
+      background: #bfdbfe;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      padding: 1.2rem;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      border: 0.0625rem solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(0.8rem);
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--white);
+      font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .stat span:last-child {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .promise-panel {
+      background: var(--white);
+      color: var(--dark);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.35rem, 5vw, 2.5rem);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promise-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 0.4rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .promise-panel h3 {
+      margin-bottom: 1rem;
+    }
+
+    .promise-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .promise-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      align-items: start;
+      color: var(--dark-soft);
+      font-weight: 700;
+    }
+
+    .promise-list svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--secondary);
+      margin-top: 0.18rem;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(8, 145, 178, 0.24), transparent 32%),
+        linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta h2 {
+      color: var(--white);
+      max-width: 16ch;
+      margin-inline: auto;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 44rem;
+      margin: 1rem auto 0;
+      font-size: 1.08rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .cta .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .zone {
+      background: var(--cream);
+    }
+
+    .zone-layout {
+      display: grid;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .zone-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.4rem;
+    }
+
+    .zone-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.95rem 1rem;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      font-weight: 800;
+      color: var(--dark-soft);
+    }
+
+    .zone-list svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .map-card {
+      min-height: 26rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.92), rgba(8, 145, 178, 0.86)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0 0.1rem, transparent 0.1rem 1.2rem);
+      box-shadow: var(--shadow-md);
+      isolation: isolate;
+    }
+
+    .map-card::before,
+    .map-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 0.08rem solid rgba(255, 255, 255, 0.35);
+      width: 18rem;
+      aspect-ratio: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .map-card::after {
+      width: 28rem;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .map-pin {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4.25rem;
+      height: 4.25rem;
+      transform: translate(-50%, -50%);
+      border-radius: 1.2rem 1.2rem 1.2rem 0;
+      background: var(--white);
+      rotate: -45deg;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 1.2rem 3rem rgba(15, 23, 42, 0.24);
+      z-index: 2;
+    }
+
+    .map-pin span {
+      rotate: 45deg;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    .map-info {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(0.8rem);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .map-info strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .map-info span {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .contact {
+      background: var(--white);
+    }
+
+    .contact-layout {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .contact-card,
+    .form-card {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 0.0625rem solid var(--line);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .contact-card {
+      display: grid;
+    }
+
+    .contact-image {
+      min-height: 17rem;
+      background: var(--dark);
+    }
+
+    .contact-image img {
+      height: 100%;
+    }
+
+    .contact-details {
+      padding: clamp(1.35rem, 5vw, 2rem);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      padding: 1rem;
+      border-radius: var(--radius);
+      background: var(--light);
+    }
+
+    .contact-row svg {
+      width: 1.3rem;
+      height: 1.3rem;
+      color: var(--primary);
+      margin-top: 0.15rem;
+    }
+
+    .contact-row strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 0.12rem;
+    }
+
+    .contact-row a,
+    .contact-row span {
+      color: var(--muted);
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .form-card {
+      padding: clamp(1.35rem, 5vw, 2rem);
+    }
+
+    .form-card h3 {
+      margin-bottom: 0.55rem;
+    }
+
+    .form-card p {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .field label {
+      font-weight: 800;
+      color: var(--dark);
+      font-size: 0.9rem;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      min-height: 3rem;
+      border: 0.0625rem solid rgba(15, 23, 42, 0.14);
+      border-radius: 0.9rem;
+      padding: 0.85rem 1rem;
+      background: var(--light);
+      color: var(--dark);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .field textarea {
+      min-height: 8rem;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.12);
+      background: var(--white);
+    }
+
+    .site-footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 4rem 0 6rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.68);
+      margin-top: 1rem;
+      max-width: 28rem;
+    }
+
+    .footer-title {
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.86rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      color: rgba(255, 255, 255, 0.68);
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: 0.25rem;
+    }
+
+    .socials {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 999rem;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      border: 0.0625rem solid rgba(255, 255, 255, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+      transform: translateY(-0.18rem);
+    }
+
+    .socials svg {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.4rem;
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
+      display: grid;
+      gap: 0.6rem;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.88rem;
+    }
+
+    @media (min-width: 40rem) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-proof {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 48rem) {
+      .section-header {
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: end;
+      }
+
+      .contact-card {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+
+      .form-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .floating-call {
+        display: none;
+      }
+
+      .site-footer {
+        padding-bottom: 3rem;
+      }
+
+      .footer-bottom {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 64rem) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .main-nav {
+        position: static;
+        inset: auto;
+        min-height: auto;
+        padding: 0;
+        background: transparent;
+        color: var(--dark);
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.4rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.35rem;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        padding: 0;
+        border: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        color: var(--dark-soft);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-links a:hover {
+        padding-left: 0;
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .desktop-cta {
+        display: inline-flex;
+      }
+
+      .hero-content {
+        max-width: 58rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .realisations-layout {
+        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+      }
+
+      .before-after {
+        grid-row: span 2;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr 0.86fr;
+        align-items: center;
+      }
+
+      .zone-layout,
+      .contact-layout {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    @media (min-width: 75rem) {
+      .service-card.featured {
+        transform: translateY(1.2rem);
+      }
+
+      .service-card.featured:hover {
+        transform: translateY(0.85rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Accueil ProCleanAuto83">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 15.5h16M6.5 18.5h.01M17.5 18.5h.01M6 15.5l1.7-5.1A3 3 0 0 1 10.55 8h2.9a3 3 0 0 1 2.85 2.4l1.7 5.1M5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h1A1.5 1.5 0 0 0 9 18.5h6a1.5 1.5 0 0 0 1.5 1.5h1A1.5 1.5 0 0 0 19 18.5v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>
+          <span class="brand-mark">ProCleanAuto83</span>
+          <span class="brand-sub">Detailing à domicile</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#prestations">Prestations</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#zone">Zone</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a class="phone" href="tel:+33771832324">+33 7 71 83 23 24</a>
+          <a class="btn btn-primary" href="#contact">
+            Demander un devis
+          </a>
+        </div>
+      </nav>
+
+      <a class="btn btn-primary desktop-cta" href="tel:+33771832324">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6.6 4.8 8.7 4a1.5 1.5 0 0 1 1.8.8l1 2.3a1.5 1.5 0 0 1-.4 1.7l-1 1a11.2 11.2 0 0 0 4.1 4.1l1-1a1.5 1.5 0 0 1 1.7-.4l2.3 1a1.5 1.5 0 0 1 .8 1.8l-.8 2.1a2.2 2.2 0 0 1-2.3 1.4C9.8 18.2 5.8 14.2 5.2 7.1a2.2 2.2 0 0 1 1.4-2.3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        +33 7 71 83 23 24
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=1200&auto=format" alt="">
+      </div>
+      <div class="container hero-content">
+        <span class="eyebrow">Nettoyage auto premium à Saint-Raphaël</span>
+        <h1 id="hero-title">Redonnez l'éclat du neuf à votre véhicule</h1>
+        <p class="hero-lead">ProCleanAuto83 intervient à domicile ou sur votre lieu de travail à Saint-Raphaël pour un detailing méticuleux, un habitacle assaini et une carrosserie sublimée sans déplacement en station.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+33771832324">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6.6 4.8 8.7 4a1.5 1.5 0 0 1 1.8.8l1 2.3a1.5 1.5 0 0 1-.4 1.7l-1 1a11.2 11.2 0 0 0 4.1 4.1l1-1a1.5 1.5 0 0 1 1.7-.4l2.3 1a1.5 1.5 0 0 1 .8 1.8l-.8 2.1a2.2 2.2 0 0 1-2.3 1.4C9.8 18.2 5.8 14.2 5.2 7.1a2.2 2.2 0 0 1 1.4-2.3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Appeler maintenant
+          </a>
+          <a class="btn btn-secondary" href="#prestations">Voir les prestations</a>
+        </div>
+        <div class="hero-proof" aria-label="Points forts ProCleanAuto83">
+          <div class="proof-card">
+            <strong>À domicile</strong>
+            <span>Saint-Raphaël et Var Est</span>
+          </div>
+          <div class="proof-card">
+            <strong>Finition detailing</strong>
+            <span>Soin précis de chaque détail</span>
+          </div>
+          <div class="proof-card">
+            <strong>Produits premium</strong>
+            <span>Matériel professionnel</span>
+          </div>
+          <div class="proof-card">
+            <strong>Devis gratuit</strong>
+            <span>Réponse rapide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="prestations" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Prestations sur mesure</span>
+            <h2 id="services-title">Nettoyage auto à Saint-Raphaël, intérieur et extérieur</h2>
+          </div>
+          <p>Chaque intervention ProCleanAuto83 est pensée pour votre usage, l'état du véhicule et le niveau de finition recherché. Nous privilégions les méthodes manuelles, les produits haut de gamme et une exécution soignée.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=1200&auto=format" alt="Nettoyage intérieur complet de voiture à Saint-Raphaël">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 13h14M7 16h.01M17 16h.01M6 13l1.2-4.1A2.6 2.6 0 0 1 9.7 7h4.6a2.6 2.6 0 0 1 2.5 1.9L18 13v4.5A1.5 1.5 0 0 1 16.5 19h-1A1.5 1.5 0 0 1 14 17.5h-4A1.5 1.5 0 0 1 8.5 19h-1A1.5 1.5 0 0 1 6 17.5V13Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Intérieur complet</h3>
+              <p>Aspiration minutieuse, plastiques, vitres, coffres, seuils et finitions pour retrouver un habitacle propre, net et agréable.</p>
+              <ul class="service-list">
+                <li>Aspiration approfondie</li>
+                <li>Nettoyage plastiques et vitres</li>
+                <li>Finition des zones difficiles</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card featured">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&auto=format" alt="Lavage extérieur haute finition à la main à Saint-Raphaël">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9.5 15.2c.4 1.2 1.3 1.8 2.5 1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Extérieur haute finition</h3>
+              <p>Lavage extérieur à la main, décontamination de carrosserie et cire de protection pour une brillance durable.</p>
+              <ul class="service-list">
+                <li>Lavage manuel sécurisé</li>
+                <li>Décontamination carrosserie</li>
+                <li>Cire de protection</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&auto=format" alt="Shampouinage de sièges et moquettes auto dans le Var Est">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 4h10v5H7V4ZM6 12h12v8H6v-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9 15h6M9 18h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Shampouinage extraction</h3>
+              <p>Nettoyage en profondeur des sièges, tapis et moquettes avec extraction pour éliminer salissures, traces et odeurs.</p>
+              <ul class="service-list">
+                <li>Sièges textiles</li>
+                <li>Moquettes et tapis</li>
+                <li>Extraction professionnelle</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=1200&auto=format" alt="Rénovation optiques de phares auto à Saint-Raphaël">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12h5M14 6l5-2M14 12h7M14 18l5 2M9 6.5c2.5 1 4 3 4 5.5s-1.5 4.5-4 5.5V6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Rénovation optiques</h3>
+              <p>Restauration de la transparence des phares ternis pour améliorer l'esthétique et la visibilité de votre véhicule.</p>
+              <ul class="service-list">
+                <li>Polissage des optiques</li>
+                <li>Gain de visibilité</li>
+                <li>Protection de finition</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?w=1200&auto=format" alt="Nettoyage et soin des cuirs automobile à domicile à Saint-Raphaël">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 7c0-2 1.5-3.5 5-3.5S17 5 17 7v10c0 2-1.5 3.5-5 3.5S7 19 7 17V7Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M7 10h10M7 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Soin des cuirs</h3>
+              <p>Nettoyage doux, nutrition et protection des cuirs pour préserver leur souplesse, leur teinte et leur aspect premium.</p>
+              <ul class="service-list">
+                <li>Nettoyage adapté</li>
+                <li>Nutrition du cuir</li>
+                <li>Protection longue tenue</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=1200&auto=format" alt="Traitement antibactérien et suppression des odeurs auto à Saint-Raphaël">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3 5 6v5c0 4.8 2.9 8.4 7 10 4.1-1.6 7-5.2 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="service-body">
+              <h3>Traitement antibactérien</h3>
+              <p>Assainissement de l'habitacle et suppression des odeurs persistantes pour retrouver un intérieur sain et confortable.</p>
+              <ul class="service-list">
+                <li>Habitacle assaini</li>
+                <li>Odeurs neutralisées</li>
+                <li>Confort immédiat</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section realisations" id="realisations" aria-labelledby="realisations-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Résultats visibles</span>
+            <h2 id="realisations-title">Réalisations de nettoyage auto à Saint-Raphaël</h2>
+          </div>
+          <p>Un véhicule entretenu avec rigueur conserve mieux sa valeur, son confort et son plaisir d'utilisation. Nos interventions privilégient le rendu propre, durable et homogène.</p>
+        </div>
+
+        <div class="realisations-layout">
+          <article class="before-after">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&auto=format" alt="Résultat avant après nettoyage auto premium à Saint-Raphaël">
+            <div class="ba-labels" aria-hidden="true">
+              <span>Avant</span>
+              <span>Après</span>
+            </div>
+            <div class="ba-content">
+              <h3>Transformation complète</h3>
+              <p>Habitacle ravivé, surfaces dégraissées, vitres nettes et extérieur brillant après une prestation détaillée.</p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3l1.7 5.2H19l-4.3 3.1 1.7 5.2L12 13.3l-4.4 3.2 1.7-5.2L5 8.2h5.3L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3>Finition detailing</h3>
+              <p>Travail méthodique sur les détails souvent négligés : aérateurs, joints, seuils, plastiques, contours et vitrages.</p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 15c4-8 12-8 16 0M7 15a5 5 0 0 0 10 0M10 15a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <h3>Confort retrouvé</h3>
+              <p>Un intérieur assaini et agréable, idéal après un achat d'occasion, un usage familial ou une période d'utilisation intensive.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="apropos" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-text">
+          <span class="eyebrow">Expertise locale</span>
+          <h2 id="about-title">ProCleanAuto83, artisan du nettoyage auto à Saint-Raphaël</h2>
+          <p>ProCleanAuto83 combine passion automobile, sens du service et techniques de nettoyage professionnel de haute précision. Notre mission est simple : vous faire gagner du temps tout en offrant à votre véhicule un soin premium, directement là où vous êtes.</p>
+          <p>Chaque prestation est réalisée avec une attention constante : choix du produit, méthode adaptée au support, contrôle de la finition et conseils d'entretien après intervention.</p>
+
+          <div class="stats-grid" aria-label="Chiffres clés ProCleanAuto83">
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span>Intervention mobile</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">7j</span>
+              <span>Créneaux flexibles selon disponibilité</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">83</span>
+              <span>Secteur Var Est</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">SIRET</span>
+              <span>92180807000019</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="promise-panel" aria-label="Garanties et engagements">
+          <h3>Nos engagements qualité</h3>
+          <ul class="promise-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Intervention à domicile ou sur votre lieu de travail à Saint-Raphaël.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Gain de temps immédiat : plus de trajet en station de lavage.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Matériel et produits professionnels haut de gamme.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Finition méticuleuse type detailing sur les zones visibles et difficiles.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Flexibilité de prise de rendez-vous sur le secteur Var Est.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section cta" aria-labelledby="cta-title">
+      <div class="container">
+        <span class="eyebrow">Devis gratuit</span>
+        <h2 id="cta-title">Votre nettoyage auto à Saint-Raphaël commence par un simple appel</h2>
+        <p>Expliquez-nous l'état de votre véhicule, votre adresse d'intervention et le niveau de finition souhaité. Nous vous orientons vers la prestation la plus adaptée.</p>
+        <div class="cta-actions">
+          <a class="btn btn-secondary" href="tel:+33771832324">Appeler le +33 7 71 83 23 24</a>
+          <a class="btn btn-dark" href="#contact">Envoyer une demande</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section zone" id="zone" aria-labelledby="zone-title">
+      <div class="container zone-layout">
+        <div>
+          <span class="eyebrow">Zone d'intervention</span>
+          <h2 id="zone-title">Nettoyage auto mobile à Saint-Raphaël et dans le Var Est</h2>
+          <p>ProCleanAuto83 se déplace selon disponibilité sur Saint-Raphaël et les communes voisines pour vous offrir un service pratique, premium et sans contrainte.</p>
+          <ul class="zone-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Saint-Raphaël
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Fréjus
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Boulouris, Agay, Valescure
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Secteur Var Est sur demande
+            </li>
+          </ul>
+        </div>
+
+        <div class="map-card" role="img" aria-label="Carte stylisée de la zone d'intervention ProCleanAuto83 autour de Saint-Raphaël">
+          <div class="map-pin"><span>83</span></div>
+          <div class="map-info">
+            <strong>Base Saint-Raphaël</strong>
+            <span>Intervention à domicile ou sur lieu de travail dans le Var Est</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Contact direct</span>
+            <h2 id="contact-title">Réserver un nettoyage auto à Saint-Raphaël</h2>
+          </div>
+          <p>Pour un devis précis, indiquez le modèle du véhicule, l'état général, les prestations souhaitées et le lieu d'intervention. Nous vous recontactons rapidement.</p>
+        </div>
+
+        <div class="contact-layout">
+          <article class="contact-card">
+            <div class="contact-image">
+              <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&auto=format" alt="Véhicule propre après detailing ProCleanAuto83 à Saint-Raphaël">
+            </div>
+            <div class="contact-details">
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6.6 4.8 8.7 4a1.5 1.5 0 0 1 1.8.8l1 2.3a1.5 1.5 0 0 1-.4 1.7l-1 1a11.2 11.2 0 0 0 4.1 4.1l1-1a1.5 1.5 0 0 1 1.7-.4l2.3 1a1.5 1.5 0 0 1 .8 1.8l-.8 2.1a2.2 2.2 0 0 1-2.3 1.4C9.8 18.2 5.8 14.2 5.2 7.1a2.2 2.2 0 0 1 1.4-2.3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>
+                  <strong>Téléphone</strong>
+                  <a href="tel:+33771832324">+33 7 71 83 23 24</a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:contact@procleanauto83.fr">contact@procleanauto83.fr</a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+                <div>
+                  <strong>Adresse d'intervention</strong>
+                  <span>Saint-Raphaël et Var Est, à domicile ou au travail</span>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>
+                  <strong>Horaires</strong>
+                  <span>Lundi au samedi, sur rendez-vous</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <form class="form-card" action="#" method="post">
+            <h3>Demande de devis gratuit</h3>
+            <p>Formulaire de contact indicatif. Vous pouvez aussi appeler directement pour une réponse plus rapide.</p>
+
+            <div class="form-grid two">
+              <div class="field">
+                <label for="name">Nom</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Votre nom">
+              </div>
+              <div class="field">
+                <label for="phone">Téléphone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+33">
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="service">Prestation souhaitée</label>
+                <select id="service" name="service">
+                  <option>Nettoyage intérieur complet</option>
+                  <option>Shampouinage et extraction</option>
+                  <option>Lavage extérieur haute finition</option>
+                  <option>Décontamination et cire</option>
+                  <option>Rénovation d'optiques</option>
+                  <option>Soin des cuirs</option>
+                  <option>Traitement antibactérien</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Modèle du véhicule, état général, adresse d'intervention, créneau souhaité"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-call" href="tel:+33771832324" aria-label="Appeler ProCleanAuto83">Appeler ProCleanAuto83</a>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand" aria-label="Retour en haut de page">
+            <span class="brand-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 15.5h16M6.5 18.5h.01M17.5 18.5h.01M6 15.5l1.7-5.1A3 3 0 0 1 10.55 8h2.9a3 3 0 0 1 2.85 2.4l1.7 5.1M5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h1A1.5 1.5 0 0 0 9 18.5h6a1.5 1.5 0 0 0 1.5 1.5h1A1.5 1.5 0 0 0 19 18.5v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>
+              <span class="brand-mark" style="color: #ffffff;">ProCleanAuto83</span>
+              <span class="brand-sub">Nettoyage auto Saint-Raphaël</span>
+            </span>
+          </a>
+          <p>Detailing à domicile, lavage intérieur et extérieur, soin des cuirs, rénovation optiques et traitement antibactérien pour particuliers et professionnels du Var Est.</p>
+          <div class="socials" aria-label="Réseaux sociaux fictifs">
+            <a href="#" aria-label="Instagram ProCleanAuto83">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="5" y="5" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16.5 7.8h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook ProCleanAuto83">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 8h2V5h-2.4A3.6 3.6 0 0 0 10 8.6V11H8v3h2v6h3v-6h2.3l.7-3h-3V8.8c0-.5.4-.8 1-.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Profil professionnel ProCleanAuto83">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 9h16v10H4V9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M9 9V6h6v3M8 13h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#prestations">Prestations</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#zone">Zone d'intervention</a></li>
+            <li><a href="#contact">Contact et devis</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Coordonnées</div>
+          <ul class="footer-links">
+            <li><a href="tel:+33771832324">+33 7 71 83 23 24</a></li>
+            <li><a href="mailto:contact@procleanauto83.fr">contact@procleanauto83.fr</a></li>
+            <li><span>Saint-Raphaël, Var Est</span></li>
+            <li><span>Lundi au samedi sur rendez-vous</span></li>
+            <li><span>SIRET 92180807000019</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 ProCleanAuto83. Tous droits réservés.</span>
+        <span>Mentions légales - Politique de confidentialité - Site vitrine professionnel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelectorAll('.main-nav a');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
